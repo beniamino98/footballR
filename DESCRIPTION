@@ -1,0 +1,18 @@
+Package: football
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Author: beniamino sartini 
+Maintainer:  <sartinibeniamino@gmail.com>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+Encoding: UTF-8
+Imports: 
+       dplyr,
+       purrr,
+       lubridate,
+       stringr,
+       readr
+LazyData: true
+License: GPL-3
+RoxygenNote: 6.1.1
