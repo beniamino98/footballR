@@ -4,7 +4,16 @@
 #'@param anno year
 #'@param verbose TRUE /FALSE
 #'@export
-football_single <- function(country, div = "div1", anno = "2018", verbose = TRUE ){
+#'
+#'
+#'
+#'
+
+
+
+football_single <- function(country, div = "div1", anno = "2018", verbose = TRUE ) {
+
+  read_csv_quiet <- function(x) suppressMessages(suppressWarnings(readr::read_csv(x)))
 
   codex <-
     list(
@@ -35,14 +44,15 @@ football_single <- function(country, div = "div1", anno = "2018", verbose = TRUE
 
   url <- paste0( "https://www.football-data.co.uk/mmz4281/",anni[ anno ],"/",codex[[ country ]] [[ div ]], ".csv" )
 
-  out <- suppressMessages(suppressWarnings(readr::read_csv(url)))
+  out <- read_csv_quiet(url)
 
-  attr(out, "country") <- country
-  attr(out, "class") <- c("football", class(out))
+
   if(verbose) {message("importazione ", country," ",  anno," ", div,  " completata!")}
+
   simplify_football(out)
 
 }
+
 
 
 
