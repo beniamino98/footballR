@@ -1,6 +1,9 @@
 # FootballR: a wrapper for football historical result 
-### The data were provided from football-data.co.uk
 
+
+### Data Source 
+
+The data were provided from [football-data.co.uk](https://www.football-data.co.uk). 
 
 
 ### About 
@@ -84,6 +87,7 @@ If you want to be more selective you can import just the years you want with the
 
 
 ###### Have a question?
+
 
 
 ### Author
