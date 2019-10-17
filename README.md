@@ -6,7 +6,8 @@
 #### Usage 
 country <- "Italy
 
-the function will import all historical data, for every competition. /n
+the function will import all historical data, for every competition.
+
 football_country <- function( country )
 
 
