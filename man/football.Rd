@@ -4,11 +4,22 @@
 \alias{football}
 \title{football}
 \usage{
-football(country)
+football(country = "italy", div = "div1", from = 2003, to = 2019,
+  raw = FALSE, quiet = FALSE)
 }
 \arguments{
-\item{country}{the name of the country you want to import}
+\item{country}{country}
+
+\item{div}{division}
+
+\item{from}{anno di inizio}
+
+\item{to}{anno di fine}
+
+\item{raw}{jjs}
+
+\item{quiet}{TRUE /FALSE}
 }
 \description{
-funzione per importare tutti i dati di un paese
+funzione per importare tutti gli anni di ua divisione
 }

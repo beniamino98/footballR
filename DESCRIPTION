@@ -3,13 +3,14 @@ Type: Package
 Title: Tidy tools for football-data Analysis 
 Version: 0.1.0
 Author: Beniamino Sartini 
-Maintainer:  <statisticaltime@gmail.com>
+Maintainer:  <sartinibeniamino@gmail.com>
 Description: A package for importing football data using the site football-data.co.uk, the packages also inclued useful command for extracting and visualize data using the tidyverse packages philosophy.
 Encoding: UTF-8
 Imports: 
        dplyr,
        purrr,
        lubridate,
+       httr,
        stringr,
        readr
 LazyData: true
