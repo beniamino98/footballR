@@ -1,9 +1,7 @@
-# FootballR: a wrapper for football historical result 
-### The data were provided from football-data.co.uk
+# FootballR: historical football data with R 
 
 ### About 
-[footballR](https://github.com/beniamino98/football) is an [R](https://www.r-project.org)
-package that provide useful functions for importing football-data from [football-data.uk](https://www.football-data.co.uk), for 11 states: 
+FootballR is an [R](https://www.r-project.org)package that provide a framework for importing the data provided in the website [football-data.uk](https://www.football-data.co.uk) in form of csv files. The data are availables for 11 countries: 
 
 - england 
 - scotland 
@@ -19,9 +17,9 @@ package that provide useful functions for importing football-data from [football
 
 For each country there are more than one division availables. 
 
-- div1: is the first division 
-- div2: is the second division
-- div3: is the third division
+ - div1: is the first division 
+ - div2: is the second division
+ - div3: is the third division
 
 For England premier, championship, div1 and div2 are availables,while for Scotland premier, div1, div2 and div3. 
 For the states: germany, italy, spain, france are availables the first and the second divisions.
@@ -129,8 +127,6 @@ winHome <dbl>, winAway <dbl>, isGoal_1T <dbl>, isGoal_2T <dbl>
 ```
 
 
-
-
 ###### Have a question?
 
        
@@ -145,23 +141,26 @@ The output variables are recoded from the original data and they assume the foll
 
 ##### General variables 
 - country: the reference country 
-- division: 
-- season: 
-- year:
+- division: the reference division
+- season: the reference season
+- year: the reference year
+
+Note: difference between season and year ( example for year = 2018)
+Under the year 2018 there are the match between 2018 and 2019. The season argument in this case will be "2018-2019" while year = "2018".
 
 ##### Match variables 
 
 ##### Match variables: general data
-- time:
-- date: 
+- time: starting time of the match.
+- date: date of the match. 
 - home_team 
 - away_team
-- home_goal_1T
-- home_goal_2T
-- away_goal_1T
-- away_goal_2T
-- result_1T
-- result_2T
+- home_goal_1T: number of goal of the home team at the end of the first time.
+- home_goal_2T: number of goal of the home team at the end of the second time.
+- away_goal_1T: number of goal of the away team at the end of the first time.
+- away_goal_2T: number of goal of the away team at the end of the second time.
+- result_1T: result at the end of first time (A = away, D = drow, H = home).
+- result_2T: result at the end of second time (A = away, D = drow, H = home).
 
 ##### Match variables: home data 
 - home_shots 
