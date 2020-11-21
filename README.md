@@ -141,18 +141,19 @@ Beniamino Sartini
 ####  VARIABLE NOTES 
 The output variables are recoded from the original data and they assume the following meaning: 
 
-##### Information variables 
+##### General variables 
 - country: the reference country 
 - division: 
 - season: 
 - year:
+
+##### Match variables 
+
+##### Match variables: general data
 - time:
 - date: 
 - home_team 
 - away_team
-
-##### Match data variables 
-
 - home_goal_1T
 - home_goal_2T
 - away_goal_1T
@@ -160,12 +161,14 @@ The output variables are recoded from the original data and they assume the foll
 - result_1T
 - result_2T
 
+##### Match variables: home data 
 - home_shots 
 - home_target_shots 
 - home_corners
 - home_yellow 
 - home_red
 
+##### Match variables: away data 
 - away_shots 
 - away_target_shots 
 - away_corners
@@ -177,7 +180,7 @@ The output variables are recoded from the original data and they assume the foll
 - drow_quote: reference drow quote from Bet365 (is the only available for all country and all years)
 - away_quote: reference away quote from Bet365 (is the only available for all country and all years)
 
-##### Boolean variables 
+##### Boolean variables: over  
 - over0.5: is 1 if the sum of the goal is greater or equal than 1, otherwise is 0. 
 - over1.5: is 1 if the sum of the goal is greater or equal than 2, otherwise is 0. 
 - over2.5: is 1 if the sum of the goal is greater or equal than 3, otherwise is 0. 
@@ -185,6 +188,7 @@ The output variables are recoded from the original data and they assume the foll
 - over4.5: is 1 if the sum of the goal is greater or equal than 5, otherwise is 0. 
 - over5.5: is 1 if the sum of the goal is greater or equal than 6, otherwise is 0. 
 
+##### Boolean variables: under 
 - under0.5: is 1 if the sum of the goal is strictly less than 1, otherwise is 0. 
 - under1.5: is 1 if the sum of the goal is strictly less than 2, otherwise is 0.
 - under2.5: is 1 if the sum of the goal is strictly less than 3, otherwise is 0.
@@ -192,6 +196,7 @@ The output variables are recoded from the original data and they assume the foll
 - under4.5: is 1 if the sum of the goal is strictly less than 5, otherwise is 0.
 - under5.5: is 1 if the sum of the goal is strictly less than 6, otherwise is 0.
 
+##### Boolean variables: win / goal 
 - winHome: is 1 the home team win the match (result_2T = H), otherwise is 0.
 - winAway: is 1 the away team win the match (result_2T = A), otherwise is 0.
 - isGoal_1T: is 1 if the sum of the goal in the first time is different from zero, otherwise is 0. 
