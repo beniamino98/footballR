@@ -1,5 +1,17 @@
+# decalring global variables
+utils::globalVariables(c("home_team", "away_team", 
+                         "home_goal_2T","home_goal_1T", "away_goal_1T", "away_goal_2T",
+                         "home_shots", "home_target_shots", "home_corners", "home_yellow", "home_red", 
+                         "away_shots", "away_target_shots", "away_corners", "away_yellow", "away_red",
+                         "home_quote", "away_quote", "drow_quote", "season", "result_2T", "result_1T", "time"))
+
+
 #'@title info_countries 
-#'@description  
+#'@description a function to obtain all the available countries. 
+#'@return character vector
+#'@name info_countries
+#'@rdname info_countries
+#'@export
 
 info_countries <- function(){
   
@@ -9,9 +21,14 @@ info_countries <- function(){
   
 }
 
+
+
 #'@title info_divisions
-#'@description  
-#'@param country 
+#'@description a function to obtain all the available division for all countries or for a specific country. 
+#'@param country : character. One of the available countries. See  \code{info_country}
+#'@name info_divisions
+#'@rdname info_divisions
+#'@export
 
 info_divisions <- function(country = "all"){
   
@@ -39,9 +56,11 @@ info_divisions <- function(country = "all"){
   return(supported.divisions)
 }
 
+
+
 #'@title is_country  
-#'@description  
-#'@param country 
+#'@description a function to check if is a valid country or not. 
+#'@param country : character. One of the available countries. See  \code{info_country}
 
 is_country <- function(country = NULL){
   
@@ -54,10 +73,11 @@ is_country <- function(country = NULL){
 }
 
 
+
 #'@title is_division 
-#'@description  
-#'@param country  
-#'@param division division
+#'@description a function to check if is a valid division or not.
+#'@param country  : character. One of the available countries. See  \code{info_country}
+#'@param division : character. One of the available divisions See  \code{info_divisions}
 
 is_division <- function(country = NULL, division = NULL){
   
@@ -68,10 +88,18 @@ is_division <- function(country = NULL, division = NULL){
   
 }
 
+
+
 #'@title na_if 
-#'@description  
-#'@param x
-#'@param .if
+#'@description a function to substitute others forms of NA's. It is a consistent function in the sense 
+#'             that if x is a list the output will be a list;
+#'             if is a data.frame, will be a data.frame;
+#'             and if it is a vector it will be a vector.   
+#'@param x an object, can be a vector, a list or a dataframe.
+#'@param .if others type of NA's. By default is  c("", " ", "N/A", "NA")
+#'@name na_if
+#'@rdname na_if
+#'@export
 
 na_if <- function(x = NULL, .if = c("", " ", "N/A", "NA")){
   
@@ -97,4 +125,3 @@ na_if <- function(x = NULL, .if = c("", " ", "N/A", "NA")){
   return(x)
   
 }
-
