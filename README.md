@@ -39,6 +39,8 @@ remotes::install_github("beniamino98/footballR")
 # or
 devtools::install_github("beniamino98/footballR")
 
+library(footballR)
+
 ```
 
 ### Getting Started
