@@ -1,17 +1,19 @@
 Package: footballR
 Type: Package
-Title: Tidy tools for football-data Analysis 
+Title: Tidy framework for importing football-data
 Version: 0.1.0
 Author: Beniamino Sartini 
 Maintainer:  <sartinibeniamino@gmail.com>
-Description: A package for importing football data using the site football-data.co.uk, the packages also inclued useful command for extracting and visualize data using the tidyverse packages philosophy.
+Description: A package for importing football data using the site football-data.co.uk, the packages is build using the tidyverse philosophy.
 Encoding: UTF-8
 Imports: 
        dplyr,
        purrr,
        lubridate,
        httr,
-       stringr,
+       stats,
+       utils,
+       RCurl,
        readr
 LazyData: true
 License: GPL-3
