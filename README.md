@@ -1,11 +1,9 @@
 # FootballR: a wrapper for football historical result 
 ### The data were provided from football-data.co.uk
 
-
-
 ### About 
 [footballR](https://github.com/beniamino98/football) is an [R](https://www.r-project.org)
-package that provide useful functions for importing football-data, for 11 states: 
+package that provide useful functions for importing football-data from [football-data.uk](https://www.football-data.co.uk), for 11 states: 
 
 - england 
 - scotland 
@@ -133,6 +131,7 @@ winHome <dbl>, winAway <dbl>, isGoal_1T <dbl>, isGoal_2T <dbl>
 
 ###### Have a question?
 
+       
 
 ### Author
 
@@ -140,271 +139,64 @@ Beniamino Sartini
 
 #### *** 
 ####  VARIABLE NOTES 
+The output variables are recoded from the original data and they assume the following meaning: 
+
+##### Information variables 
+- country: the reference country 
+- division: 
+- season: 
+- year:
+- time:
+- date: 
+- home_team 
+- away_team
+
+##### Match data variables 
+
+- home_goal_1T
+- home_goal_2T
+- away_goal_1T
+- away_goal_2T
+- result_1T
+- result_2T
+
+- home_shots 
+- home_target_shots 
+- home_corners
+- home_yellow 
+- home_red
+
+- away_shots 
+- away_target_shots 
+- away_corners
+- away_yellow 
+- away_red
+
+##### Quotes variables 
+- home_quote: reference home quote from Bet365 (is the only available for all country and all years)
+- drow_quote: reference drow quote from Bet365 (is the only available for all country and all years)
+- away_quote: reference away quote from Bet365 (is the only available for all country and all years)
+
+##### Boolean variables 
+- over0.5: is 1 if the sum of the goal is greater or equal than 1, otherwise is 0. 
+- over1.5: is 1 if the sum of the goal is greater or equal than 2, otherwise is 0. 
+- over2.5: is 1 if the sum of the goal is greater or equal than 3, otherwise is 0. 
+- over3.5: is 1 if the sum of the goal is greater or equal than 4, otherwise is 0. 
+- over4.5: is 1 if the sum of the goal is greater or equal than 5, otherwise is 0. 
+- over5.5: is 1 if the sum of the goal is greater or equal than 6, otherwise is 0. 
+
+- under0.5: is 1 if the sum of the goal is strictly less than 1, otherwise is 0. 
+- under1.5: is 1 if the sum of the goal is strictly less than 2, otherwise is 0.
+- under2.5: is 1 if the sum of the goal is strictly less than 3, otherwise is 0.
+- under3.5: is 1 if the sum of the goal is strictly less than 4, otherwise is 0.
+- under4.5: is 1 if the sum of the goal is strictly less than 5, otherwise is 0.
+- under5.5: is 1 if the sum of the goal is strictly less than 6, otherwise is 0.
+
+- winHome: is 1 the home team win the match (result_2T = H), otherwise is 0.
+- winAway: is 1 the away team win the match (result_2T = A), otherwise is 0.
+- isGoal_1T: is 1 if the sum of the goal in the first time is different from zero, otherwise is 0. 
+- isGoal_2T: is 1 if the sum of the goal in the second time (home_goal_2T + away_goal_2T) is different from zero, otherwise is 0. 
 
-#####  match information
-Div = League Division
 
-Date = Match Date (dd/mm/yy)
 
-Time = Time of match kick off
 
-HomeTeam = Home Team
-
-AwayTeam = Away Team
-
-FTHG and HG = Full Time Home Team Goals
-
-FTAG and AG = Full Time Away Team Goals
-
-FTR and Res = Full Time Result (H=Home Win, D=Draw, A=Away Win)
-
-HTHG = Half Time Home Team Goals
-
-
-HTAG = Half Time Away Team Goals
-
-HTR = Half Time Result (H=Home Win, D=Draw, A=Away Win)
-
-
-
-##### Match Statistics (where available)
-
-Attendance = Crowd Attendance 
-
-Referee = Match Referee
-
-HS = Home Team Shots
-
-AS = Away Team Shots
-
-HST = Home Team Shots on Target
-
-AST = Away Team Shots on Target
-
-HHW = Home Team Hit Woodwork
-
-AHW = Away Team Hit Woodwork
-
-HC = Home Team Corners
-
-AC = Away Team Corners
-
-HF = Home Team Fouls Committed
-
-AF = Away Team Fouls Committed
-
-HFKC = Home Team Free Kicks Conceded
-
-AFKC = Away Team Free Kicks Conceded
-
-HO = Home Team Offsides
-
-AO = Away Team Offsides
-
-HY = Home Team Yellow Cards
-
-AY = Away Team Yellow Cards
-
-HR = Home Team Red Cards
-
-AR = Away Team Red Cards
-
-HBP = Home Team Bookings Points (10 = yellow, 25 = red)
-
-ABP = Away Team Bookings Points (10 = yellow, 25 = red)
-
-####### Note that Free Kicks Conceeded includes fouls, offsides and any other offense commmitted and will always be equal to or higher than the number of fouls. Fouls make up the vast majority of Free Kicks Conceded. Free Kicks Conceded are shown when specific data on Fouls are not available (France 2nd, Belgium 1st and Greece 1st divisions).
-
-####### Note also that English and Scottish yellow cards do not include the initial yellow card when a second is shown to a player converting it into a red, but this is included as a yellow (plus red) for European games.
-
-
-#### Key to 1X2 (match) betting odds data:
-  
-B365H = Bet365 home win odds
-
-B365D = Bet365 draw odds
-
-B365A = Bet365 away win odds
-
-BSH = Blue Square home win odds
-
-BSD = Blue Square draw odds
-
-BSA = Blue Square away win odds
-
-BWH = Bet&Win home win odds
-
-BWD = Bet&Win draw odds
-
-BWA = Bet&Win away win odds
-
-GBH = Gamebookers home win odds
-
-GBD = Gamebookers draw odds
-
-GBA = Gamebookers away win odds
-
-IWH = Interwetten home win odds
-
-IWD = Interwetten draw odds
-
-IWA = Interwetten away win odds
-
-LBH = Ladbrokes home win odds
-
-LBD = Ladbrokes draw odds
-
-LBA = Ladbrokes away win odds
-
-PSH and PH = Pinnacle home win odds
-
-PSD and PD = Pinnacle draw odds
-
-PSA and PA = Pinnacle away win odds
-
-SOH = Sporting Odds home win odds
-
-SOD = Sporting Odds draw odds
-
-SOA = Sporting Odds away win odds
-
-SBH = Sportingbet home win odds
-
-SBD = Sportingbet draw odds
-
-SBA = Sportingbet away win odds
-
-SJH = Stan James home win odds
-
-SJD = Stan James draw odds
-
-SJA = Stan James away win odds
-
-SYH = Stanleybet home win odds
-
-SYD = Stanleybet draw odds
-
-SYA = Stanleybet away win odds
-
-VCH = VC Bet home win odds
-
-VCD = VC Bet draw odds
-
-VCA = VC Bet away win odds
-
-WHH = William Hill home win odds
-
-WHD = William Hill draw odds
-
-WHA = William Hill away win odds
-
-Bb1X2 = Number of BetBrain bookmakers used to calculate match odds averages and maximums
-
-BbMxH = Betbrain maximum home win odds
-
-BbAvH = Betbrain average home win odds
-
-BbMxD = Betbrain maximum draw odds
-
-BbAvD = Betbrain average draw win odds
-
-BbMxA = Betbrain maximum away win odds
-
-BbAvA = Betbrain average away win odds
-
-MaxH = Market maximum home win odds
-
-MaxD = Market maximum draw win odds
-
-MaxA = Market maximum away win odds
-
-AvgH = Market average home win odds
-
-AvgD = Market average draw win odds
-
-AvgA = Market average away win odds
-
-
-
-
-#### Key to total goals betting odds:
-  
-BbOU = Number of BetBrain bookmakers used to calculate over/under 2.5 goals (total goals) averages and maximums
-
-BbMx>2.5 = Betbrain maximum over 2.5 goals
-
-BbAv>2.5 = Betbrain average over 2.5 goals
-
-BbMx<2.5 = Betbrain maximum under 2.5 goals
-
-BbAv<2.5 = Betbrain average under 2.5 goals
-
-GB>2.5 = Gamebookers over 2.5 goals
-
-GB<2.5 = Gamebookers under 2.5 goals
-
-B365>2.5 = Bet365 over 2.5 goals
-
-B365<2.5 = Bet365 under 2.5 goals
-
-P>2.5 = Pinnacle over 2.5 goals
-
-P<2.5 = Pinnacle under 2.5 goals
-
-Max>2.5 = Market maximum over 2.5 goals
-
-Max<2.5 = Market maximum under 2.5 goals
-
-Avg>2.5 = Market average over 2.5 goals
-
-Avg<2.5 = Market average under 2.5 goals
-
-
-
-
-
-#### Key to Asian handicap betting odds:
-  
-BbAH = Number of BetBrain bookmakers used to Asian handicap averages and maximums
-
-BbAHh = Betbrain size of handicap (home team)
-
-AHh = Market size of handicap (home team) (since 2019/2020)
-
-BbMxAHH = Betbrain maximum Asian handicap home team odds
-
-BbAvAHH = Betbrain average Asian handicap home team odds
-
-BbMxAHA = Betbrain maximum Asian handicap away team odds
-
-BbAvAHA = Betbrain average Asian handicap away team odds
-
-GBAHH = Gamebookers Asian handicap home team odds
-
-GBAHA = Gamebookers Asian handicap away team odds
-
-GBAH = Gamebookers size of handicap (home team)
-
-LBAHH = Ladbrokes Asian handicap home team odds
-
-LBAHA = Ladbrokes Asian handicap away team odds
-
-LBAH = Ladbrokes size of handicap (home team)
-
-B365AHH = Bet365 Asian handicap home team odds
-
-B365AHA = Bet365 Asian handicap away team odds
-
-B365AH = Bet365 size of handicap (home team)
-
-PAHH = Pinnacle Asian handicap home team odds
-
-PAHA = Pinnacle Asian handicap away team odds
-
-MaxAHH = Market maximum Asian handicap home team odds
-
-MaxAHA = Market maximum Asian handicap away team odds	
-
-AvgAHH = Market average Asian handicap home team odds
-
-AvgAHA = Market average Asian handicap away team odds
