@@ -5,7 +5,11 @@
 
 ### About 
 [footballR](https://github.com/beniamino98/football) is an [R](https://www.r-project.org)
-package that provide useful tools for importing and analyize football-data, for 10 states:
+package that provide useful functions for importing football-data, for 10 states: 
+
+- england 
+- scotland 
+- germany
 "england", "scotland" , "germany", "italy", "spain", "france", "netherlands", "belgium"    
 "portugal" and  "turkey". 
 
