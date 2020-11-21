@@ -30,7 +30,7 @@ get_years <- function( country = NULL, division = "div1", year = c(start = 2010,
 #'@name get_divisions
 #'@rdname get_divisions
 #'@return tibble
-#'
+
 get_divisions <- function( country = NULL, division = "all", year = c(start = 2010, end = 2020), quiet = FALSE){
   
   output  <- NULL
