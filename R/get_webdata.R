@@ -1,5 +1,3 @@
-
-
 #'@title get_webdata 
 #'@description base function to get in a clean way the data availables on \href{https://www.football-data.co.uk}{football-uk}. 
 #'@param country character. One of the available countries. See  \code{info_country}.
@@ -12,11 +10,12 @@
 #'@rdname get_webdata
 #'@return tibble
 
+
 get_webdata <- function( country = NULL, division = "div1", year = 2020, raw = FALSE, quiet = FALSE){
   
 
   clean_football_data <- function(df = NULL){
-    
+
     
     # dichiarazione variabili di interesse 
     variables_codex <- list(
@@ -103,8 +102,7 @@ get_webdata <- function( country = NULL, division = "div1", year = 2020, raw = F
     
     output <- dplyr::as_tibble(empty_df)
     
-    
-    
+  
     # effettuo alcune modifiche e inserisco delle nuove variabili costruite a partire da quelle di interesse 
     
     output <- dplyr::mutate(output, 
@@ -128,6 +126,8 @@ get_webdata <- function( country = NULL, division = "div1", year = 2020, raw = F
                             drow_quote = as.double(drow_quote),
                             away_quote = as.double(away_quote)
     )
+    
+    output <- dplyr::mutate_if(output, is.factor, as.character)
     
     output <- dplyr::filter(output, !is.na(home_goal_2T) & !is.na(away_goal_2T) & !is.na(home_goal_1T & !is.na(away_goal_1T) ))
     
@@ -207,7 +207,7 @@ get_webdata <- function( country = NULL, division = "div1", year = 2020, raw = F
   
   # importing file 
   file.get <- RCurl::getURL(url.file)
-  file.csv <- read.csv(textConnection(file.get))
+  file.csv <- utils::read.csv(textConnection(file.get))
   file.tbl <- dplyr::tbl_df(file.csv)
   
   # importation message 
