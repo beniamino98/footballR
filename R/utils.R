@@ -101,27 +101,37 @@ is_division <- function(country = NULL, division = NULL){
 #'@rdname na_if
 #'@export
 
+
 na_if <- function(x = NULL, .if = c("", " ", "N/A", "NA")){
   
   .f <- function(x = NULL, .if = NULL){
-    ifelse(x %in% .if, NA, x)
+    
+    x <- ifelse(is_empty(x) || is.null(x) || x %in% .if, NA, x)
+    
+    return(x)
+    
   }
-  
   
   # case for list and for vectors (vectors contained in list)
   # the list case has to be evaluated first
-  
-  if(is.list(x) & !is.data.frame(x) & !is.vector(x)){
+  if(is.list(x) & !is.data.frame(x)){
+    
     x <- purrr::map(x, ~.f(x = .x, .if = .if))
-  } else if(!is.list(x) & !is.data.frame(x) & is.vector(x)){
-    x <- .f(x = x, .if = .if)
+    
+  } else if(is.vector(x)){
+    
+    x <-  unlist(purrr::map(x, ~.f(x = .x, .if = .if)))
+    
   }
   
   # case for data.frame/tibble...
-  if(!is.list(x) & is.data.frame(x) & !is.vector(x)){
+  if(is.data.frame(x)){
+    
     x <- purrr::map_df(x, ~.f(x = .x, .if = .if))
+    
   }
   
   return(x)
   
 }
+
