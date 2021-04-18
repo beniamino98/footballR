@@ -17,9 +17,9 @@ FootballR is an [R](https://www.r-project.org)package that provide a framework f
 
 For each country there are more than one division availables. 
 
- - div1: is the first division 
- - div2: is the second division
- - div3: is the third division
+ - div1: is the first division.
+ - div2: is the second division.
+ - div3: is the third division.
 
 For England premier, championship, div1 and div2 are availables,while for Scotland premier, div1, div2 and div3. 
 For the states: germany, italy, spain, france are availables the first and the second divisions.
@@ -92,7 +92,8 @@ $greece
 
 ```
 
-Specifying a country it will returna vector of availables division for that country. 
+Specifying a country it will return a vector of availables division for that country. 
+
 ```r
 
 info_divisions("england")
@@ -102,10 +103,10 @@ info_divisions("england")
 ```
 
 
-### Importing Data 
+### Download Data 
 
-It is possible to import a several types of data with the function: `football_uk`. You can import all the data availables, using country = "all" and division = "all" and specifying just the range of years. 
-
+You can import all the data available, specifying the argument "all" in both: country and division parameters. The years go from 2000 up today, but before 2010, they are not always consistent. An example: 
+ 
 ```r
 > football_uk(country = "england", division = "div1", year = c(start = 2010, end = 2020), quiet = FALSE)    
 
@@ -129,18 +130,18 @@ winHome <dbl>, winAway <dbl>, isGoal_1T <dbl>, isGoal_2T <dbl>
 
 ###### Have a question?
 
-       
-
 ### Author
 
 Beniamino Sartini
 
-#### *** 
+
 ####  VARIABLE NOTES 
+
 The output variables are recoded from the original data and they assume the following meaning: 
 
 ##### General variables 
-- country: the reference country 
+
+- <strong>country</strong> : the reference country 
 - division: the reference division
 - season: the reference season
 - year: the reference year
