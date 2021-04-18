@@ -17,9 +17,9 @@ FootballR is an [R](https://www.r-project.org)package that provide a framework f
 
 For each country there are more than one division availables. 
 
- - div1: is the first division.
- - div2: is the second division.
- - div3: is the third division.
+ - <strong>div1</strong>: is the first division.
+ - <strong>div2</strong>: is the second division.
+ - <strong>div3</strong>: is the third division.
 
 For England premier, championship, div1 and div2 are availables,while for Scotland premier, div1, div2 and div3. 
 For the states: germany, italy, spain, france are availables the first and the second divisions.
@@ -28,8 +28,7 @@ For the other states is available only the first division.
 
 ### Installation
 
-To install the development version, you need to clone the repository and build
-from source, or run one of:
+To install the development version, you need to clone the repository and build from source, or run one of:
 
 ```r
 # lightweight
@@ -132,7 +131,7 @@ winHome <dbl>, winAway <dbl>, isGoal_1T <dbl>, isGoal_2T <dbl>
 
 ### Author
 
-Beniamino Sartini
+<strong>Beniamino Sartini</strong>
 
 
 ####  VARIABLE NOTES 
@@ -142,9 +141,9 @@ The output variables are recoded from the original data and they assume the foll
 ##### General variables 
 
 - <strong>country</strong> : the reference country 
-- division: the reference division
-- season: the reference season
-- year: the reference year
+- <strong>division</strong>: the reference division
+- <strong>season</strong>: the reference season
+- <strong>year</strong>: the reference year
 
 Note: difference between season and year ( example for year = 2018)
 Under the year 2018 there are the match between 2018 and 2019. The season argument in this case will be "2018-2019" while year = "2018".
