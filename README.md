@@ -145,7 +145,7 @@ The output variables are recoded from the original data and they assume the foll
 - <strong>season</strong>: the reference season
 - <strong>year</strong>: the reference year
 
-Note: difference between season and year ( example for year = 2018)
+<strong>Note</strong>: difference between season and year ( example for year = 2018)
 Under the year 2018 there are the match between 2018 and 2019. The season argument in this case will be "2018-2019" while year = "2018".
 
 ##### Match variables 
