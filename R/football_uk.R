@@ -94,7 +94,7 @@ get_years <- function(country = NULL, division = "div1", years = c(start = 2010,
 
     safe_function <- purrr::safely(get_football_uk)
 
-    output <- purrr::map_df(seq.years, ~safe_function(country = country, division = division, year = .x, raw = FALSE, verbose = verbose)$result)
+    output <- purrr::map_df(seq_years, ~safe_function(country = country, division = division, year = .x, raw = FALSE, verbose = verbose)$result)
 
     return(output)
 
