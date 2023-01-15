@@ -1,0 +1,19 @@
+Package: footballR
+Type: Package
+Title: A wrapper for importing the football data in R
+Version: 0.1.0
+Author: Beniamino Sartini 
+Maintainer: <sartinibeniamino@gmail.com>
+Description: A package for importing football data from the site \href{https://www.football-data.co.uk}{football-uk}.
+Encoding: UTF-8
+Imports: 
+       dplyr,
+       purrr,
+       RCurl,
+       lubridate
+Depends: R (>= 3.5.1), dplyr(>= 1.0.9), purrr(>= 0.3.4), RCurl (>= 1.98-1.9), lubridate (>= 1.8.0)
+LazyData: true
+URL: https://github.com/beniamino98/footballR
+BugReports: https://github.com/beniamino98/footballR/issues
+License: GPL-3
+RoxygenNote: 7.1.1
