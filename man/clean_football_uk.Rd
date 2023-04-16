@@ -4,14 +4,14 @@
 \alias{clean_football_uk}
 \title{clean_football_uk}
 \usage{
-clean_football_uk(x = NULL)
+clean_football_uk(data = NULL)
 }
 \arguments{
-\item{x}{dataset from the function "get_football_uk"}
+\item{data}{dataset from the function "get_football_uk"}
 }
 \value{
 tibble
 }
 \description{
-clean_football_uk
+cleaner for football_uk output.
 }

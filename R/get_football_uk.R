@@ -1,16 +1,16 @@
 #'@title get_football_uk
-#'@description base function to get in a clean way the data availables on \href{https://www.football-data.co.uk}{football-uk}.
-#'@param country character. One of the available countries.
-#'@param division character. One of the available divisions.
-#'@param year character. The year for which you want to import the data.
-#'@param raw logical. If TRUE will be applied a function to reduce and rename the variables,
-#'                    otherwise it will return the original data.frame.
-#'@param quiet logical. When TRUE function evalueates without displaying customary messages.
+#'@description base function to download and clean the data available on \href{https://www.football-data.co.uk}{football-uk}.
+#'@param country character. one of the available country.
+#'@param division character, one of the available divisions.
+#'@param year character, the season year, for example for season 2022/2023 the year will be 2023.
+#'@param raw logical, FALSE as default. If TRUE the function will return a tibble as it is stored on \href{https://www.football-data.co.uk}{football-uk},
+#'                    otherwise it will clean and structure the result.
+#'@param quiet logical, when TRUE function evaluates without displaying customary messages.
 #'@name get_football_uk
 #'@rdname get_football_uk
 #'@return tibble
 
-get_football_uk <- function(country = NULL, division = "div1", year = 2020, raw = FALSE, verbose = FALSE){
+get_football_uk <- function(country = NULL, division = "div1", year = 2020, raw = FALSE, quiet = FALSE){
 
   supported_country <- list(
     england     =  c(premier = "E0", championship = "E1", div1 = "E2", div2 = "E3"  ),
@@ -54,7 +54,7 @@ get_football_uk <- function(country = NULL, division = "div1", year = 2020, raw 
   file_tbl <- dplyr::as_tibble(file_csv)
 
   # Messages
-  if(verbose) message('Download of: "', match_div, '" (', match_year, ') of "', match_country,  '" done with success!')
+  if(!quiet) message('Download of: "', match_div, '" (', match_year, ') of "', match_country,  '" done with success!')
 
   # Raw file (no cleaned)
   if(raw) return(file_tbl)
@@ -74,15 +74,15 @@ get_football_uk <- function(country = NULL, division = "div1", year = 2020, raw 
 }
 
 #'@title clean_football_uk
-#'@description
-#'@param x dataset from the function "get_football_uk"
+#'@description cleaner for football_uk output.
+#'@param data dataset from the function "get_football_uk"
 #'@name clean_football_uk
 #'@return tibble
 
-clean_football_uk <- function(x = NULL){
+clean_football_uk <- function(data = NULL){
 
   # Dataset to be cleaned
-  df <- x
+  df <- data
 
   # Variables Codex
   variables_codex <- list(

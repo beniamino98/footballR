@@ -9,24 +9,24 @@ get_football_uk(
   division = "div1",
   year = 2020,
   raw = FALSE,
-  verbose = FALSE
+  quiet = FALSE
 )
 }
 \arguments{
-\item{country}{character. One of the available countries.}
+\item{country}{character. one of the available country.}
 
-\item{division}{character. One of the available divisions.}
+\item{division}{character, one of the available divisions.}
 
-\item{year}{character. The year for which you want to import the data.}
+\item{year}{character, the season year, for example for season 2022/2023 the year will be 2023.}
 
-\item{raw}{logical. If TRUE will be applied a function to reduce and rename the variables,
-otherwise it will return the original data.frame.}
+\item{raw}{logical, FALSE as default. If TRUE the function will return a tibble as it is stored on \href{https://www.football-data.co.uk}{football-uk},
+otherwise it will clean and structure the result.}
 
-\item{quiet}{logical. When TRUE function evalueates without displaying customary messages.}
+\item{quiet}{logical, when TRUE function evaluates without displaying customary messages.}
 }
 \value{
 tibble
 }
 \description{
-base function to get in a clean way the data availables on \href{https://www.football-data.co.uk}{football-uk}.
+base function to download and clean the data available on \href{https://www.football-data.co.uk}{football-uk}.
 }

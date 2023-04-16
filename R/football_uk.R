@@ -1,17 +1,17 @@
 #'@title football_uk
-#'@description base function to get in a clean way the data available on \href{https://www.football-data.co.uk}{football-uk}.
-#'@param country character vector. One or more of the available countries.
+#'@description A wrapper for the data available on \href{https://www.football-data.co.uk}{football-uk}.
+#'@param country character vector, one or more of the available countries.
 #'                By default is set to 'all' and will consider all the countries available.
-#'@param division character vector. One or more of the available divisions.
-#'                By default is set to 'all' and will consider all the divisions available for a specific country.
-#'@param years integer vector. The first item is the first year of importation and the second item is the last year.
-#'@param verbose logical. When TRUE function evaluates without displaying customary messages.
+#'@param division character vector, one or more of the available divisions.
+#'                By default is set to 'all' and will consider all the divisions available for a specified country.
+#'@param years integer vector, the first entry is the first year for importation while the second entry the last year.
+#'@param quiet logical, when TRUE function evaluates without displaying customary messages.
 #'@name football_uk
 #'@rdname football_uk
 #'@return tibble
 #'@export
 
-football_uk <- function(country = "all", division = "all", years = c(start = 2010, end = 2020), verbose = TRUE) {
+football_uk <- function(country = "all", division = "all", years = c(start = 2010, end = 2020), quiet = FALSE) {
 
     supported_country <- c("england", "scotland", "germany", "italy", "spain", "france", "netherlands", "belgium", "portugal", "turkey", "greece")
 
@@ -25,7 +25,7 @@ football_uk <- function(country = "all", division = "all", years = c(start = 201
 
     }
 
-    output <- purrr::map_df(country, ~get_divisions(country = .x, division = division, years = years, verbose = verbose))
+    output <- purrr::map_df(country, ~get_divisions(country = .x, division = division, years = years, quiet = quiet))
 
     output <- dplyr::arrange(output, dplyr::desc(date))
 

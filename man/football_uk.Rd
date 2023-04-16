@@ -8,23 +8,23 @@ football_uk(
   country = "all",
   division = "all",
   years = c(start = 2010, end = 2020),
-  verbose = TRUE
+  quiet = FALSE
 )
 }
 \arguments{
-\item{country}{character vector. One or more of the available countries.
+\item{country}{character vector, one or more of the available countries.
 By default is set to 'all' and will consider all the countries available.}
 
-\item{division}{character vector. One or more of the available divisions.
-By default is set to 'all' and will consider all the divisions available for a specific country.}
+\item{division}{character vector, one or more of the available divisions.
+By default is set to 'all' and will consider all the divisions available for a specified country.}
 
-\item{years}{integer vector. The first item is the first year of importation and the second item is the last year.}
+\item{years}{integer vector, the first entry is the first year for importation while the second entry the last year.}
 
-\item{verbose}{logical. When TRUE function evaluates without displaying customary messages.}
+\item{quiet}{logical, when TRUE function evaluates without displaying customary messages.}
 }
 \value{
 tibble
 }
 \description{
-base function to get in a clean way the data available on \href{https://www.football-data.co.uk}{football-uk}.
+A wrapper for the data available on \href{https://www.football-data.co.uk}{football-uk}.
 }
