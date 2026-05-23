@@ -1,2 +1,15 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.git$
+^\.gitignore$
+^\.Rhistory$
+^\.RData$
+^\.Ruserdata$
+^\.DS_Store$
+^data-raw$
+^README\.Rmd$
+^cran-comments\.md$
+^CRAN-SUBMISSION$
+^revdep$
+^pkgdown$
+^docs$
